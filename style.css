@@ -1,0 +1,28 @@
+body { background: #f4f6fb; }
+
+.threshold-input { width: 90px; }
+.log-list { max-height: 320px; overflow-y: auto; font-size: .85rem; }
+.log-list li { padding: 4px 0; border-bottom: 1px dashed #dde1ea; }
+.log-list .time { color: #8a91a3; font-size: .75rem; }
+
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; background: #adb5bd; }
+.dot.online { background: #198754; }
+
+#cart-body tr.new-row { animation: flash 1.2s ease-out; }
+@keyframes flash { from { background: #fff3cd; } to { background: transparent; } }
+
+/* Receipt is hidden on screen, shown only when printing */
+.print-only { display: none; }
+
+@media print {
+  body { background: #fff; }
+  .no-print, #join-view, #room-view { display: none !important; }
+  .print-only { display: block !important; font-family: Georgia, serif; color: #000; padding: 0 12px; }
+  .print-only h1 { font-size: 22px; margin-bottom: 4px; }
+  .print-only table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+  .print-only th, .print-only td { border-bottom: 1px solid #999; padding: 5px 6px; text-align: left; font-size: 13px; }
+  .print-only .num { text-align: right; }
+  .print-only .total-row td { font-weight: bold; border-top: 2px solid #000; }
+  .print-only .meta { font-size: 12px; margin-bottom: 8px; }
+  @page { margin: 14mm; }
+}
